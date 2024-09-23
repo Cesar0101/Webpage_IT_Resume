@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: rgb(40, 109, 248);
+  --text-color:#727171; 
+}
+html{
+  font-size: 10px;
+}
+body {
+    /* font-size: 16px; Set a base font size for the root element */
+  font-family: Inter, sans-serif;
+  display: flex;
+  color: white;
+  background-color: black;
+}
+/* COMMON STYLES */
+a{
+  text-decoration: none;
+  columns: white;
+}
+
+.description {
+  word-wrap: wrap;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text-color);
+
+}
+.title {
+  margin-top: 4rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.item_preTitle {
+  margin-top: 1.6rem;
+  margin-bottom: -.4rem;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-weight: 300;
+}
+.item_title {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  color:white;
+  font-weight: 500;
+  margin: 0.8rem 0;
+}
+
+
+.item_subtitle {
+  margin-bottom: .4rem;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-weight: 400;  /* increased to differentiate texts*/
+}
+strong {
+  font-weight: 800;
+}
+
+/* ------------ LAYOUT ------------- */
+.container {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto; /* Add some top margin */
+  display: grid;
+  padding: 5rem;
+   /* border-color: red;
+  border-style: dotted;  */
+  background-color: rgb(10, 10, 10);
+  grid-template-columns: 1fr 1fr;      /*        < ------------------     COLUMN SIZE */
+  gap:4rem;
+}
+  /* TEST MEDIA FUNCION */
+
+  @media only screen and(max-width: 768px) {  
+    .container{
+      width: 100%;
+      grid-template-columns: 1fr;
+      padding:3rem;
+      gap:7rem;
+    }
+    .Profile_image {
+      order: -1; /* Place the image first in the order */
+    }
+  }
+
+  
+  .Profile {
+    grid-column: 1 / -1;
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    padding: 5rem;  
+    /* background-color: rgb(10, 10, 10); */
+   }
+.group-1 .group-2{
+  display:flex;
+  flex-direction: column;
+  gap: 0.8rem;   /* 5 Rem ? */
+}
+
+.group-3 {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  grid-column: 1 / - 1;
+  display: inline;
+  flex-direction: row;
+}
+.group-3 > div {
+  flex: 1;
+}
+
+/* ----- Profile image ------- */
+.Profile_container{
+  display: flex;
+  text-wrap: wrap;
+  gap:2rem;
+}
+
+/* Testing vvvvvvvv */
+
+.Profile_image img{
+  max-width: 250px;
+  width: 155px;
+  height: 165px;
+  border-radius: 500px;
+  transition: 1000ms;
+  transition: opacity 1000ms ease; /* Adjust transition duration and timing function as needed */
+}
+
+
+
+       /*-------- Profile   Name---- */
+
+.Profile_firstname{
+  color: white;
+  font-weight: 100;
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: -0.8rem;
+}
+.Profile_lastname{
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 15vw, 7rem);
+  text-transform: uppercase;
+  display: block;
+}
+
+.Profile_title{
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.downloadBtn{
+  display: inline;
+  text-decoration: underline;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.downloadBtn:hover{
+  color: var(--primary-color);
+}
+
+/* EXPERTISE */
+.skill_list {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  line-height: 1.5;
+}
+
+/* REFERENCES */
+.ref_item {
+  margin-top: 2rem;
+}
+.ref_name {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+
+
+/* EDUCATION */
+.edu {
+  margin-top: 2rem;
+}
+.edu_item {
+  margin-top: 2rem;
+
+}
+  /* ====== CERTIFICATION */
+.certification_item {
+  margin-top: 1rem;
+}
+/* EXP */
+.exp_item {
+  margin-top: 2rem;
+}
+
+/* INTERESTS */
+.interests {
+  margin-top: 2rem;
+}
+.interest_items {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.interest_item {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: var(--text-color);
+}
+.interest_item svg {
+  width: 2rem;
+}
+
+/* SOCIALS */
+.social_items {
+  margin-top: 2rem;
+}
+.social_item {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--primary-color);
+}
+.social_item:hover {
+  color: var(--primary-color);
+}
+.social_item svg {
+  width: 2rem;
+}
+a {
+  text-decoration: none;
+}
+
+  /* font-size: 2rem; 2 times the root font size (32px) */
+  /* font-size: 1.2em; 1.2 times the parent's font size */
+
+  
+  /* margin-bottom: 0px; */
+    /* margin-top:0; */
+
+
+/* 
+  #dynamic-title {
+    font-size: 1.5em; Adjust font size as needed */
+    /* margin: 0; */
+  
+
+
+/* VERTICAL ICONS */
+/* vertical lines */
+/* .vertical-line {
+  border-left: 2px solid black; /* Adjust width and color as needed */
+  /* height: 300px; Adjust height as needed */
+
+/* ICON EFFECTS */
+.icon-bar .icon img{
+
+  animation: bounce 3s ease-in-out ;  /*infinite? */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(11px);
+  }
+  60% {
+    transform: translateY(4px); 
+  }
+  /* 100%{
+    tranform: translateX(0)
+  } */
+}
+
+
+
